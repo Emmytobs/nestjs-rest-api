@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  dev-db:
+    image: postgres:14.7-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    ports:
+      - 5332:5432
+    volumes:
+      - postgresql-host-data:/var/lib/postgresql/data
+
+volumes:
+  postgresql-host-data:
